@@ -14,15 +14,29 @@ html {
   font-size: 65%;
 }
 
+body::before {
+  content: "";
+  position: fixed; /* Or absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Your overlay color and transparency */
+  z-index: -1; /* Place it behind the content */
+}
+
 body {
   font-family: "Quicksand", sans-serif;
   padding: 40px;
   font-size: 65%;
+  background-image: url("../img/bartender.webp");
+  background-size: cover;
+  margin: auto;
 }
 
-/* header {
-  text-align: center;
-} */
+header {
+  background: rgba(0,0,0 0.7);
+}
 
 header h1 {
   text-align: center;
@@ -44,7 +58,7 @@ img{
 
 .carousel-container {
   margin: auto;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 1.5rem; /* More rounded corners */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
