@@ -10,6 +10,32 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+html {
+  font-size: 65%;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  padding: 40px;
+  font-size: 65%;
+}
+
+/* header {
+  text-align: center;
+} */
+
+header h1 {
+  text-align: center;
+  font-size: 4rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 100px;
+  letter-spacing: 1rem;
+  font-weight: bold;
+}
+
 img{
   display: block;
   margin: 0 auto;
@@ -17,6 +43,7 @@ img{
 }
 
 .carousel-container {
+  margin: auto;
   background-color: #ffffff;
   border-radius: 1.5rem; /* More rounded corners */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
