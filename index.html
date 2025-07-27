@@ -4,8 +4,7 @@
     	<meta charset="utf-8">
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
-
-		<title>Cocktail API 🍸</title>
+		<title>🍸Cocktails</title>
 
 		<!-- external CSS link -->
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -14,25 +13,34 @@
 	</head>
 	<body>
 
-		<header>
-			<h1>Search Drink Recipes!</h1>
-		</header>
+		<section class="body">
+			<header>
+				<h1>Search Drink Recipes</h1>
+			</header>
 
-		<div class="carousel-container">
-			<div id="loading-indicator" class="loading-spinner"></div>
-			<img id="drink-image" class="carousel-image hidden" src="" alt="Drink Image">
-			<div class="carousel-content hidden">
-				<h2 id="drink-name" class="text-3xl font-bold text-gray-800 mb-3"></h2>
-				<p id="drink-instructions" class="text-lg text-gray-600 leading-relaxed"></p>
-			</div>
-			<div class="carousel-navigation hidden">
-				<button id="prev-button" class="carousel-button">Previous</button>
-				<button id="next-button" class="carousel-button">Next</button>
-			</div>
-			<button id="toggle-autoplay-button" class="toggle-button hidden">Start Auto-Play</button>
-		</div>
+			<section class="carousel-container">
+				<img id="drink-image" class="carousel-image" src="" alt="drink image">
+			</section>
 
-		<h1>Which Cocktail?</h1>
+			<div class="search-container">
+				<input type="text" placeholder="Search drink name or ingredient" class="search-bar">
+			</div>
+			  
+			<div class="button-container">
+				<button class="button search-name">Find drink name</button>
+				<button class="button search-ingredient">Find by ingredient</button>
+			</div>
+			
+			<section class="display-info">
+				<img id="img-result" src="" alt="">
+				<h2>Name</h2>
+				<h3>Drink Type</h3>
+				<ul></ul>
+				<p></p>
+			</section>
+		</section>
+
+		<!-- <h1>Which Cocktail?</h1>
 		<input type="text" name="" value="">
 		<button type="button" name="button">Get Cocktail</button>
 
@@ -41,7 +49,7 @@
 		<ul>
 			
 		</ul>
-		<h3>Instructions</h3>
+		<h3>Instructions</h3> -->
 		
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
