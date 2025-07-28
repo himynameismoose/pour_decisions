@@ -5,7 +5,7 @@ document.querySelector('.search-name').addEventListener('click', getDrink);
 function getDrink() {
     let drink = document.querySelector('input').value;
 
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
         .then(res => res.json())
         .then(data => {
             console.log(data.drinks[0]);
