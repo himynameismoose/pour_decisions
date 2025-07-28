@@ -181,9 +181,35 @@ header h1 {
   display: none;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
+  body {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .body {
+    padding: 30px;
+  }
+
   h1 {
-    font-size: 1rem;
+    margin: auto !important;
+    font-size: 3rem !important;
+  }
+
+  .display-info {
+    width: 100%;
+  }
+
+  .display-info h2 {
+    font-size: 2rem;
+  }
+
+  .display-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .display-info p {
+    width: 100%;
   }
 }
 
