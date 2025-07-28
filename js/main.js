@@ -1,6 +1,7 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
 
 document.querySelector('.search-name').addEventListener('click', getDrink);
+document.querySelector('.search-bar').addEventListener('click', clearDrinkInfo);
 
 function getDrink() {
     let drink = document.querySelector('input').value;
@@ -8,6 +9,7 @@ function getDrink() {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
         .then(res => res.json())
         .then(data => {
+            clearDrinkInfo();
             console.log(data.drinks[0]);
             document.querySelector('h2').innerHTML = data.drinks[0].strDrink;
             document.querySelector('#img-result').src = data.drinks[0].strDrinkThumb;
@@ -73,6 +75,16 @@ function getDrink() {
         .catch(err => {
             console.log(`error ${err}`);
         })
+}
+
+function clearDrinkInfo() {
+    const drinkList = document.querySelector('ul');
+    const displayInfo = document.querySelector('.display-info');
+    drinkList.innerHTML = '';
+
+    if (!displayInfo.classList.contains('hide')) {
+        displayInfo.classList.add('hide');
+    }
 }
 
 // DOM element references
