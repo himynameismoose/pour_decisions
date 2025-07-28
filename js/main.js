@@ -5,7 +5,7 @@ document.querySelector('.search-name').addEventListener('click', getDrink);
 function getDrink() {
     let drink = document.querySelector('input').value;
 
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
         .then(res => res.json())
         .then(data => {
             console.log(data.drinks[0]);
@@ -32,14 +32,42 @@ function getDrink() {
                 data.drinks[0].strIngredient15
             ];
 
-            console.log(ingredients);
+            let amounts = [
+                data.drinks[0].strMeasure1,
+                data.drinks[0].strMeasure2,
+                data.drinks[0].strMeasure3,
+                data.drinks[0].strMeasure4,
+                data.drinks[0].strMeasure5,
+                data.drinks[0].strMeasure6,
+                data.drinks[0].strMeasure7,
+                data.drinks[0].strMeasure8,
+                data.drinks[0].strMeasure9,
+                data.drinks[0].strMeasure10,
+                data.drinks[0].strMeasure11,
+                data.drinks[0].strMeasure12,
+                data.drinks[0].strMeasure13,
+                data.drinks[0].strMeasure14,
+                data.drinks[0].strMeasure15
+            ]
 
-            for (let i = 0; i < ingredients.length; i++) {
-                if (ingredients[i] != null) {
+            for (let i = 0; i <= ingredients.length; i++) {
+
+                if (ingredients[i] != null && amounts[i] != null) {
                     let ingredient = document.createElement('li');
-                    ingredient.innerHTML = ingredients[i];
+                    ingredient.innerHTML = `${ingredients[i]} - ${amounts[i]}`;
+                    document.querySelector('ul').appendChild(ingredient);
+                } else if (ingredients[i] != null && amounts[i] == null) {
+                    let ingredient = document.createElement('li');
+                    ingredient.innerHTML = `${ingredients[i]}`;
                     document.querySelector('ul').appendChild(ingredient);
                 }
+
+            }
+
+            const info = document.querySelector('.display-info');
+
+            if (info.classList.contains('hide')) {
+                info.classList.remove('hide');
             }
         })
         .catch(err => {
@@ -53,7 +81,7 @@ const drinkImage = document.getElementById('drink-image');
 drinks = []; // store fetched drink data
 let currentIndex = 0; // current index of displayed drink in carousel
 let carouselInterval;
-const AUTO_PLAY_INTERVAL_MS = 1500;
+const AUTO_PLAY_INTERVAL_MS = 2000;
 
 function fetchDrinks() {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
