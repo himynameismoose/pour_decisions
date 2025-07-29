@@ -50,7 +50,7 @@ body {
 
 header h1 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   text-transform: uppercase;
   width: 80%;
   margin: auto;
@@ -217,6 +217,10 @@ header h1 {
 
   .display-info p {
     width: 100%;
+  }
+
+  .no-result .err {
+    font-size: 1.5rem;
   }
 }
 
