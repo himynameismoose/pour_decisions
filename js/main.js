@@ -23,7 +23,7 @@ function getDrink() {
             document.querySelector('.drink-name').innerHTML = data.drinks[0].strDrink;
             document.querySelector('#img-result').src = data.drinks[0].strDrinkThumb;
             document.querySelector('h3').innerText = data.drinks[0].strCategory;
-            document.querySelector('p').innerText = data.drinks[0].strInstructions;
+            document.querySelector('.instructions').innerText = data.drinks[0].strInstructions;
 
             let ingredients = [
                 data.drinks[0].strIngredient1,

@@ -238,6 +238,10 @@ header p {
     width: 100%;
   }
 
+  .no-result {
+    width: 100%;
+  }
+
   .no-result .err {
     font-size: 1.5rem;
   }
