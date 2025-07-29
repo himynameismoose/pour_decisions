@@ -5,13 +5,22 @@ document.querySelector('.search-bar').addEventListener('click', clearDrinkInfo);
 
 function getDrink() {
     let drink = document.querySelector('input').value;
+    clearDrinkInfo();
+
+
+    if (!drink || drink.trim() === '') {
+
+        document.querySelector('.err').innerText = 'no drink found';
+        document.querySelector('.no-result').classList.remove('hide');
+        return;
+    }
 
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
         .then(res => res.json())
         .then(data => {
             clearDrinkInfo();
             console.log(data.drinks[0]);
-            document.querySelector('h2').innerHTML = data.drinks[0].strDrink;
+            document.querySelector('.drink-name').innerHTML = data.drinks[0].strDrink;
             document.querySelector('#img-result').src = data.drinks[0].strDrinkThumb;
             document.querySelector('h3').innerText = data.drinks[0].strCategory;
             document.querySelector('p').innerText = data.drinks[0].strInstructions;
@@ -80,10 +89,15 @@ function getDrink() {
 function clearDrinkInfo() {
     const drinkList = document.querySelector('ul');
     const displayInfo = document.querySelector('.display-info');
+    const noResult = document.querySelector('.no-result');
     drinkList.innerHTML = '';
 
     if (!displayInfo.classList.contains('hide')) {
         displayInfo.classList.add('hide');
+    }
+
+    if (!noResult.classList.contains('hide')) {
+        noResult.classList.add('hide');
     }
 }
 

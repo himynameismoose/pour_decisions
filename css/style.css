@@ -129,7 +129,7 @@ header h1 {
   background-color: #0056b3;
 }
 
-.display-info {
+.display-info, .no-result {
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -147,6 +147,13 @@ header h1 {
   justify-content: center;
   margin: auto;
   margin-bottom: 20px;
+}
+
+.no-result .err {
+  font-size: 2rem;
+  color: red;
+  text-transform: uppercase;
+  margin: auto;
 }
 
 .display-info h2 {
