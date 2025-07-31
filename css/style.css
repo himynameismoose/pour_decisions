@@ -43,9 +43,9 @@ body {
 
 .body {
   background: rgba(255, 255, 255, 0.0);
-  height: auto;
+  height: 825px;
   border-radius: 30px;
-  padding: 50px;
+  padding: 20px;
 }
 
 header h1 {
@@ -203,6 +203,12 @@ header p {
 
 .hide {
   display: none;
+}
+
+footer a {
+  color: darkgrey;
+  font-size: 2rem;
+  text-decoration: none;
 }
 
 @media (max-width: 430px) {
