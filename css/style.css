@@ -32,11 +32,11 @@ body {
   font-size: 65%;
   min-height: 100vh;
   width: 100%;
-  background-image: url("../img/cocktail-background.png");
+  background-image: url("../img/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center center;
+  background-position: top;
   margin: auto;
   margin: 0;
 }
@@ -209,6 +209,10 @@ header p {
   body {
     padding: 10px;
     width: 100%;
+    background-image: url("../img/background-mobile.png");
+    background-position: right;
+    background-size: cover;
+    
   }
 
   .body {
